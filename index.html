@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+    //Initialize OneSignal 
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+            //OneSignal App ID
+            appId: "bfb2ccef-6f9a-4a47-901d-de2e39012e2e",
+        });
+    });
+    </script>
+    <title>TakeShape-OneSignal</title>
+</head>
+<body>
+    <h1>Take-Shape-OneSignal-Sample</h1>
+    <div>
+        <button id="push">SEND PUSH</button>
+        <button id="userId">GET DEVICE ID</button>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
