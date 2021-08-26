@@ -5,8 +5,7 @@ const sendPush = async(API_URL, data) => {
     const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Basic YOUR_REST_API_KEY'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
       });
