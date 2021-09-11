@@ -1,31 +1,115 @@
 <html lang="en">
+	<head>
+		<title>TakeShape-OneSignal</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        //Initialize OneSignal 
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function () {
-            OneSignal.init({
-                //OneSignal App ID
-                appId: "bfb2ccef-6f9a-4a47-901d-de2e39012e2e",
-            });
-        });
-    </script>
-    <title>TakeShape-OneSignal</title>
-</head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
-    <h1>Take-Shape-OneSignal-Sample</h1>
-    <form id="pushForm">
-        <input type="text" id="message" required/>
-        <button id="push" type="submit">SEND PUSH</button>
-    </form>
-</body>
-<script src="./index.js"></script>
+		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	    <script>
+	        window.OneSignal = window.OneSignal || [];
+	        OneSignal.push(function () {
+	            OneSignal.init({
+	                appId: "bfb2ccef-6f9a-4a47-901d-de2e39012e2e"
+	            });
+	        });
+	    </script>
 
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				height: 100vh;
+				width: 100%;
+				margin: 0;
+				justify-content: center;
+				font-family: sans-serif;
+			}
+
+			button {
+				background-color: green;
+				border: none;
+				color: white;
+				padding: 10px 20px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				margin: 4px 2px;
+				cursor: pointer;
+				border-radius: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+	    <h1>Pick a country code</h1>
+
+		<select id="country-list"></select>
+
+		<button onclick="sendPush()">SEND PUSH</button>
+
+		<p>Built with <a href="https://takeshape.io">TakeShape.io</a> and <a href="https://onesignal.com">OneSignal</a></p>
+
+		<script>
+			const projectID = "ef5ca8fc-fa2f-4de2-9aa6-56c090442391";
+			const apiKey = "8f310251c7b94177b9ccbdf5f0cda979";
+			const select = document.getElementById("country-list");
+
+			const loadCountries = async () => {
+				const resp = await fetch(
+					`https://api.takeshape.io/project/${projectID}/v3/graphql`,
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${apiKey}`
+						},
+						body: JSON.stringify({
+							query: `
+								query {
+									Countries_countries {
+										code
+									}
+								}
+							`
+						})
+					}
+				);
+				const results = await resp.json();
+				results.data.Countries_countries.map(x => x.code).forEach(code => {
+					const option = document.createElement("option");
+					option.innerText = code;
+					select.insertAdjacentElement("beforeend", option);
+				});
+			};
+
+			const sendPush = async () => {
+				await fetch(
+					`https://api.takeshape.io/project/${projectID}/v3/graphql`,
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${apiKey}`
+						},
+						body: JSON.stringify({
+							query: `
+								mutation {
+									sendPushNotification (
+										user: "${await OneSignal.getUserId()}",
+										countryCode: "${select.value}"
+									) {
+										id
+									}
+								}
+							`
+						})
+					}
+				);
+			};
+
+			loadCountries();
+		</script>
+	</body>
 </html>
