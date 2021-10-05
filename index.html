@@ -1,10 +1,8 @@
 <html lang="en">
 	<head>
 		<title>TakeShape-OneSignal</title>
-
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
 	    <script>
 	        window.OneSignal = window.OneSignal || [];
@@ -14,7 +12,7 @@
 	            });
 	        });
 	    </script>
-
+		<script src="index.js" async></script>
 		<style>
 			body {
 				display: flex;
@@ -41,75 +39,12 @@
 			}
 		</style>
 	</head>
-
 	<body>
 	    <h1>Pick a country code</h1>
-
 		<select id="country-list"></select>
-
-		<button onclick="sendPush()">SEND PUSH</button>
-
-		<p>Built with <a href="https://takeshape.io">TakeShape.io</a> and <a href="https://onesignal.com">OneSignal</a></p>
-
-		<script>
-			const projectID = "ef5ca8fc-fa2f-4de2-9aa6-56c090442391";
-			const apiKey = "8f310251c7b94177b9ccbdf5f0cda979";
-			const select = document.getElementById("country-list");
-
-			const loadCountries = async () => {
-				const resp = await fetch(
-					`https://api.takeshape.io/project/${projectID}/v3/graphql`,
-					{
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-							Authorization: `Bearer ${apiKey}`
-						},
-						body: JSON.stringify({
-							query: `
-								query {
-									Countries_countries {
-										code
-									}
-								}
-							`
-						})
-					}
-				);
-				const results = await resp.json();
-				results.data.Countries_countries.map(x => x.code).forEach(code => {
-					const option = document.createElement("option");
-					option.innerText = code;
-					select.insertAdjacentElement("beforeend", option);
-				});
-			};
-
-			const sendPush = async () => {
-				await fetch(
-					`https://api.takeshape.io/project/${projectID}/v3/graphql`,
-					{
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-							Authorization: `Bearer ${apiKey}`
-						},
-						body: JSON.stringify({
-							query: `
-								mutation {
-									sendPushNotification (
-										user: "${await OneSignal.getUserId()}",
-										countryCode: "${select.value}"
-									) {
-										id
-									}
-								}
-							`
-						})
-					}
-				);
-			};
-
-			loadCountries();
-		</script>
+		<button onclick="sendPush()" id="send-push">SEND PUSH</button>
+		<p>Built with
+			<a href="https://takeshape.io">TakeShape.io</a> and <a href="https://onesignal.com">OneSignal</a>
+		</p>
 	</body>
 </html>
