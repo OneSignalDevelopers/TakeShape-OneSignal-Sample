@@ -15,6 +15,7 @@ To run the project you will need a few things:
 ### TakeShape Project
 - TakeShape's API key, which you can find in your [TakeShape dashboard](https://app.takeshape.io/settings/api).
 
+### Countries API
 - Countries's API Key, which you can find in the [Countrie's Website](https://www.countryflags.io/).
 
 ### Running the project
