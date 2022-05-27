@@ -1,5 +1,5 @@
-const projectID = "ef5ca8fc-fa2f-4de2-9aa6-56c090442391";
-const apiKey = "8f310251c7b94177b9ccbdf5f0cda979";
+const projectID = "YOUR-TAKESHAPE-PROJECT-ID";
+const apiKey = "YOUR-COUNTRIES-API-KEY";
 const takeShapeURL = `https://api.takeshape.io/project/${projectID}/v3/graphql`;
 const select = document.getElementById("country-list");
 
