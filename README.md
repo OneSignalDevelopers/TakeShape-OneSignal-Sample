@@ -109,11 +109,13 @@ const sendPush = async () => {
 
 ### OneSignal Community
 
-#### Join the OneSignal Developers Community
-The OneSignal Developer community is a group of passionate individuals who work with OneSignal products. Community members have the opportunity to expand their network and knowledge across different technologies.
+## Show your support
 
-#### TWITTER
-Follow our [OneSignal Developers Twitter](https://twitter.com/OneSignalDevs) to learn more about OneSignal, technical tips, and the latest events from OneSignal developers.
+Give a ⭐️ if this project helped you!
 
-#### DISCORD SERVER
-The OneSignal Developer community gathers on our public chat server, available on Discord. [Our Discord server](https://discord.gg/EP7gf6Uz7G) is a safe environment to network with other members, ask questions, and learn from each other. It is also a place to engage with the OneSignal product development team.
+## OneSignal Developers
+
+* Website: https://onesignal.com/onesignal-developers
+* Twitter: [@OneSignalDevs](https://twitter.com/onesignal)
+* Github: [@OneSignalDevelopers](https://github.com/OneSignal)
+* Discord: [@onesignal](https://linkedin.com/company/onesignal)
