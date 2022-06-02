@@ -9,14 +9,14 @@ This is a sample project that experiments with the combination of [OneSignal](ht
 To run the project you will need a few things:
 
 ### OneSignal App
-- OneSignal's API KEY, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->API KEY` ).
-- OneSignal's app ID, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->App ID`).
+- OneSignal's API Key, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->API Key` ).
+- OneSignal's App Id, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->App Id`).
 
 ### TakeShape Project
-- TakeShape's API key, which you can find in your [TakeShape dashboard](https://app.takeshape.io/settings/api).
+- TakeShape's API key, which you can find in your TakeShape dashboard.
 
 ### Countries API
-- Countries's API Key, which you can find in the [Countrie's Website](https://www.countryflags.io/).
+- Countries API Key, which you can find in the Countries Website.
 
 ### Running the project
 
