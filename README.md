@@ -10,10 +10,10 @@ To run the project you will need a few things:
 
 ### OneSignal App
 - OneSignal's API Key, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->API Key` ).
-- OneSignal's App Id, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->App Id`).
+- OneSignal's App ID, which you can find in your OneSignal Dashboard(`OneSignal Dashboard->App Settings->App ID`).
 
 ### TakeShape Project
-- TakeShape's API key, which you can find in your TakeShape dashboard.
+- TakeShape's API Key, which you can find in your TakeShape dashboard.
 
 ### Countries API
 - Countries API Key, which you can find in the Countries Website.
