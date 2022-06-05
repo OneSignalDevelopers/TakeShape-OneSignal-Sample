@@ -1,5 +1,14 @@
 # TakeShape-OneSignal-Sample
 
+<p>
+  <a href="https://github.com/OneSignal/onesignal-expo-plugin/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://twitter.com/onesignaldevs" target="_blank">
+    <img alt="Twitter: onesignaldevelopers" src="https://img.shields.io/twitter/follow/onesignaldevs?style=social" />
+  </a>
+</p>
+
 This is a sample project that experiments with the combination of [OneSignal](https://onesignal.com/webpush)'s push notifications with [TakeShape](https://www.takeshape.io/)'s powerful API mesh.
 
  Visit the [how-to guide](https://onesignal.com/blog/onesignal-takeshape-collab-project/) for a more in-depth explanation of the project.
